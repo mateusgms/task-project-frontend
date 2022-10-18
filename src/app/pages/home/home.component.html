@@ -1,0 +1,12 @@
+<mat-grid-list cols="3">
+    <mat-grid-tile class="projects" *ngFor="let project of projects">
+        <app-card [data]="project">
+
+        </app-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-card >
+
+        </app-card>
+    </mat-grid-tile>
+</mat-grid-list>

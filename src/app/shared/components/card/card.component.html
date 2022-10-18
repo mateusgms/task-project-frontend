@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{data.title}}</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+        <mat-selection-list #shoes>
+            <mat-list-item style="display: flex;flex-direction:row; align-content:center;"
+                *ngFor="let shoe of typesOfShoes">
+                <mat-checkbox (mouseover)="changeText=true" (mouseout)="changeText=false">{{shoe}}</mat-checkbox>
+                <mat-icon *ngIf="changeText">edit</mat-icon>
+                <mat-icon *ngIf="changeText">delete</mat-icon>
+            </mat-list-item>
+        </mat-selection-list>
+
+        <p>
+            Options selected: {{shoes.selectedOptions.selected.length}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <app-edit-options></app-edit-options>
+    </mat-card-actions>
+</mat-card>
